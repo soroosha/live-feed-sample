@@ -10,7 +10,7 @@ function PostsHero(){
     {({theme})=>(
       <div className={styles.hero+' '+styles[theme]}>
         <div>
-          <h2>Hello, we’re lfs.</h2>
+          <h2>Hello, this is lfs.</h2>
         </div>
       </div>
     )}
