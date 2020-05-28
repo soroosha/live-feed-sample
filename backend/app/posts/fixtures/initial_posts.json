@@ -1,0 +1,29 @@
+[
+  {
+    "model": "posts.Post",
+    "pk": 1,
+    "fields": {
+      "title": "A Financial Tool for Modern Times",
+      "brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "type": "FINANCE"
+    }
+  },
+  {
+    "model": "posts.Post",
+    "pk": 2,
+    "fields": {
+      "title": "A New Discovery",
+      "brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "type": "BIOLOGY"
+    }
+  },
+  {
+    "model": "posts.Post",
+    "pk": 3,
+    "fields": {
+      "title": "Solid State Batteries Are the Future",
+      "brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "type": "TECHNOLOGY"
+    }
+  }
+]

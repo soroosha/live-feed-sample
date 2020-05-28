@@ -1,0 +1,50 @@
+# For development environments only
+version: '3.7'
+
+services:
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/usr/src/app/
+    ports:
+      - 80:80 
+    environment:
+      # - HOST= <e.g. localhost, api.something.com>
+      - CHANNELS_REDIS_HOST=redis
+      # database
+      - SQL_ENGINE=django.db.backends.postgresql
+      - SQL_HOST=database
+      - SQL_PORT=5432
+      - SQL_DATABASE=test
+      - SQL_USER=test_user
+      - SQL_PASSWORD=test_p455
+
+  # redis channel layer
+  redis:
+    image: redis:5
+
+  # local test database
+  database:
+    image: postgres:11.5-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=test
+      - POSTGRES_USER=test_user
+      - POSTGRES_PASSWORD=test_p455
+      
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - REACT_APP_WS_ROOT_URL=ws://localhost
+      - REACT_APP_API_ROOT_URL=http://localhost
+    volumes:
+      - ./frontend:/app
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+
+volumes:
+  postgres_data:

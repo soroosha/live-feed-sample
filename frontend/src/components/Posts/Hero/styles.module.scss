@@ -1,0 +1,21 @@
+@import '../../../constants/base.scss';
+
+.hero {
+  /* using a hero image repeater */
+  background: url('./media/img_hero.jpg') no-repeat center center, url('./media/img_hero_repeater.jpeg') repeat-x center center;
+  background-size:contain;
+
+  height:150px;
+
+  > div {
+    margin:0 auto;
+    max-width: $maxContentWidth;
+
+    h2 {
+      transition: color $themeTransitionMethod;
+      margin:0;
+      padding-top:25px;
+      color:#4F4D53;
+    }
+  }
+}

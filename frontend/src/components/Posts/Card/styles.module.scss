@@ -1,0 +1,47 @@
+@import '../../../constants/base.scss';
+
+.card {
+  margin-bottom: 15px;
+  max-height: 165px;
+  overflow:hidden;
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    .ant-card-head {
+      transition: color $themeTransitionMethod;
+      z-index: 1;
+    }
+    .ant-card-body {
+      flex:auto;
+      z-index: 0;
+    }
+    .ant-skeleton.ant-skeleton-active .ant-skeleton-content .ant-skeleton-paragraph > li:first-child {
+      display:none;
+    }
+  }
+
+  &.dark{
+    color: $darkForeground;
+    border-color: #999;
+
+    :global{ 
+      .ant-card-head,
+      .ant-card-body {
+        background: $darkBackground;
+        transition: none;
+      }
+      .ant-card-head {
+        transition: color $themeTransitionMethod;
+        color: $darkForeground;
+        border-color: #666;
+      }
+      .ant-skeleton.ant-skeleton-active .ant-skeleton-content .ant-skeleton-title, .ant-skeleton.ant-skeleton-active .ant-skeleton-content .ant-skeleton-paragraph > li{
+        background:#777;
+      }
+    }
+  }
+}
+.tag {
+  float:right;
+}

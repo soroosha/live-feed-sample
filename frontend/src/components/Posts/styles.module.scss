@@ -1,0 +1,8 @@
+@import '../../constants/base.scss';
+
+.feed {
+  width: $maxContentWidth;
+  margin:0 auto;
+  min-height:300px;
+  padding:30px 0;
+}
