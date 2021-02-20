@@ -1,18 +1,12 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import { Modal } from "antd"
 
 function CreatePostModal(props){
-  const [visible, setVisible] = useState(props.visible)
-
-  useEffect(()=>{
-    setVisible(props.visible)
-  }, [props.visible])
-
   return (
     <Modal
       title="Create New Post"
-      visible={visible}
-      onCancel={()=>setVisible(false)}
+      visible={props.visible || false}
+      onCancel={props.onCancel}
     >
       enter post here...
     </Modal>

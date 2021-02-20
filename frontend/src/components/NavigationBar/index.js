@@ -29,7 +29,7 @@ function NavigationBar(){
             unCheckedChildren='Dark'
             onChange={toggleTheme}
           />
-          <CreatePostModal visible={createModalVisible}/>
+          <CreatePostModal visible={createModalVisible} onCancel={()=>setCreateModalVisible(false)}/>
         </div>
       </Layout.Header>
       )}
